@@ -90,7 +90,6 @@
     let randomFontSize = Math.round(Math.random() * 100);
 
     $($title).css("font-size", randomFontSize);
-    console.log($title);
 
     //Q5
     let $orderedList = $("ol");
@@ -99,7 +98,16 @@
     //Q6
     $("aside").empty();
     $("aside").append("<p>So sorry for the previous list.  Don't know what I was thinking.</p>");
-    
+
+    //Q7
+    //$("input:nth-of-type(1)") to retrieve value of nth input element
+    // This should alos provide the value, but we had issues: ($("input:nth-of-type(1)").val());
+
+    $("input").keyup(function() {
+      $("body").css("background-color", `rgb(${$("input").eq(0).val()}, ${$("input").eq(1).val()}, ${$("input").eq(2).val()})`);
+    })
+
+    //Q8
 
   });
 </script>
