@@ -75,10 +75,22 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script>
   $(function() {
+    // Q1
     console.log('Let’s get ready to party with jQuery!');
-    // let $imgItems = $("article img");
-    // console.log($imgItems);
+
+    //Q2
     $("article img").addClass("image-center");
+
+    //Q3
+    let $articleParagraphs = $("article p");
+    $($articleParagraphs)[5].remove();
+
+    //Q4
+    let $title = $("#title");
+    let randomFontSize = Math.round(Math.random() * 100);
+
+    $($title).css("font-size", randomFontSize);
+    console.log($title);
   });
 </script>
 </body>
