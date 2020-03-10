@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies App</title>
+  <style>
+
+
+  </style>
+</head>
+
+<body>
+  <form action = "#">
+    <div>
+      <label> Movie title</label>
+        <input class="Movie-title-input" type="text">
+    </div>
+    <div>
+      <label>Movie rating</label>
+      <input class="Movie-rating-input" type = "text">
+    </div>
+    <div>
+      <input class="Submit-btn" type="submit" value="Add movie">
+    </div>
+  </form>
+  <section class="Movie-content">
+    <ul class="Movie-list">
+
+    </ul>
+  </section>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+  $(function() {
+    let counter = 0; 
+    $(".Submit-btn").on("click", function(evt){
+      evt.preventDefault();
+      //Get the input values from the form
+      let $movieTitle = $(".Movie-title-input").val();
+      let $movieRating = $(".Movie-rating-input").val();
+
+      //append to unordered list along with individual delete button
+      $("ul").append(`<li class="movie-item">${$movieTitle} rated: ${$movieRating} <button class="delete-button" id=${counter++}>Delete</button>`)
+
+    })
+
+    $(".Movie-list").on("click", "movie-item", function(evt) {
+      deleteMovie(evt.target);
+      console.log(evt.target);
+    })
+
+    function deleteMovie(target) {
+
+    }
+    // $(".delete-button").on("click", function(evt){
+    //   evt.preventDefault();
+    //   console.log("Here");
+    // })
+
+
+
+  })
+</script>
+</body>
